@@ -81,6 +81,16 @@ test("Страница проверки ассетов ссылается на �
     assert.ok(html.includes('src="assets/characters/'+file+'"'));
   }
 });
+test("Диалог S03 показывает полную реплику, а не последнее слово",()=>{
+  assert.match(app.innerHTML,/Я предлагаю проверить, какие операции действительно ограничены мощностью/);
+  assert.match(app.innerHTML,/Обновление должно работать на конкретную проблему/);
+});
+test("Тестовый CSS сохраняет длинный текст диалога на мобильных экранах",()=>{
+  const css=source("style.css");
+  assert.match(css,/\.conversation\{overflow:visible\}/);
+  assert.match(css,/\.dialogue-line\.response\{padding-left:0\}/);
+  assert.match(css,/overflow-wrap:anywhere/);
+});
 click("next","S04");
 test("Тринадцать инвестиционных карточек",()=>assert.equal((app.innerHTML.match(/class="investment /g)||[]).length,13));
 for(const id of ["A","F"])click("toggle",id);
