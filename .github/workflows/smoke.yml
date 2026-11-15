@@ -1,7 +1,7 @@
 name: Проверка игровой логики
 on:
   push:
-    branches: [main]
+    branches: [main, 'test/ui-visual-fixes-20261109']
   workflow_dispatch:
 permissions:
   contents: read
