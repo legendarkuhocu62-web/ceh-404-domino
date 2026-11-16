@@ -197,3 +197,187 @@ li{padding-bottom:8px}
 @media(max-width:660px){
   .speaker .character-art{width:112px;height:140px}
 }
+
+
+/* Локальная адаптация только сцены S05 «Заседание инвесткомитета».
+   Остальные сцены и общие компоненты не затрагиваются. */
+.scene[data-scene="S05"]{
+  padding:clamp(20px,2.8vw,36px);
+  background-image:linear-gradient(90deg,rgba(8,24,41,.78),rgba(8,24,41,.66)),url("assets/backgrounds/bg_meeting_room.webp");
+  background-size:cover;
+  background-position:center;
+}
+.scene[data-scene="S05"] .committee-layout{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:clamp(18px,2.6vw,32px);
+  border:1px solid rgba(119,157,181,.48);
+  border-radius:18px;
+  background:rgba(7,27,48,.91);
+  box-shadow:0 14px 38px #0006;
+}
+.scene[data-scene="S05"] .committee-layout > p{
+  max-width:78ch;
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.5;
+}
+.scene[data-scene="S05"] .committee-layout .summary-box{
+  margin:16px 0 20px;
+  background:rgba(10,37,57,.88);
+  border-color:#9b793c;
+}
+.scene[data-scene="S05"] .committee-choice-layout{
+  display:grid;
+  grid-template-columns:minmax(230px,.85fr) minmax(360px,1.15fr);
+  gap:clamp(18px,3vw,38px);
+  align-items:center;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(183,205,220,.42);
+}
+.scene[data-scene="S05"] .committee-choice-layout h2{
+  margin:0;
+  max-width:22ch;
+  font-size:clamp(22px,2.2vw,30px);
+}
+.scene[data-scene="S05"] .committee-options{
+  max-width:none;
+  margin:0;
+}
+.scene[data-scene="S05"] .committee-options .btn{
+  width:100%;
+  min-height:58px;
+  margin:0 0 10px;
+  padding:14px 20px;
+  border:1px solid #f4a51d;
+  border-radius:14px;
+  background:linear-gradient(180deg,#ffb21b,#ed7800);
+  color:#172435;
+  font-size:clamp(15px,1.25vw,18px);
+  font-weight:850;
+  line-height:1.35;
+  text-align:center;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.scene[data-scene="S05"] .committee-options .btn:last-child{margin-bottom:0}
+.scene[data-scene="S05"] .committee-options .btn:hover{
+  background:linear-gradient(180deg,#ffc64a,#ff9412);
+  border-color:#ffd36b;
+}
+.scene[data-scene="S05"] .committee-result{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(183,205,220,.42);
+}
+.scene[data-scene="S05"] .committee-result-label{
+  margin:0 0 9px;
+  color:#f6c66b;
+  font-size:16px;
+  font-weight:800;
+}
+.scene[data-scene="S05"] .committee-selected{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  width:100%;
+  padding:16px 20px;
+  border:2px solid #f4b52e;
+  border-radius:14px;
+  background:linear-gradient(110deg,rgba(83,61,19,.72),rgba(34,37,39,.94));
+  box-shadow:0 0 0 2px rgba(244,181,46,.12);
+}
+.scene[data-scene="S05"] .committee-selected strong{
+  font-size:clamp(17px,1.5vw,21px);
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
+.scene[data-scene="S05"] .committee-selection-mark{
+  flex:0 0 14px;
+  width:14px;
+  height:14px;
+  border:3px solid #ffc64a;
+  border-radius:50%;
+}
+.scene[data-scene="S05"] .committee-feedback{
+  max-width:85ch;
+  margin:16px 0 0;
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.5;
+}
+.scene[data-scene="S05"] .committee-actions{
+  display:flex;
+  gap:14px;
+  margin-top:22px;
+}
+.scene[data-scene="S05"] .committee-actions .btn{
+  flex:1 1 0;
+  min-width:0;
+  min-height:54px;
+  padding:13px 18px;
+  text-align:center;
+  justify-content:center;
+  font-size:16px;
+}
+.scene[data-scene="S05"] .committee-actions .btn.primary{
+  background:linear-gradient(180deg,#ffb21b,#ed7800);
+  border-color:#f4a51d;
+  color:#172435;
+}
+.scene[data-scene="S05"] .committee-actions .btn.muted{
+  background:linear-gradient(180deg,#344c68,#172b43);
+  border-color:#6e87a0;
+  color:#f1f5f8;
+}
+@media (max-width:900px) and (min-width:661px){
+  .scene[data-scene="S05"] .committee-choice-layout{
+    grid-template-columns:minmax(190px,.8fr) minmax(300px,1.2fr);
+    gap:18px;
+  }
+  .scene[data-scene="S05"] .committee-actions .btn{font-size:14px}
+}
+@media (max-width:660px){
+  .scene[data-scene="S05"]{padding:12px}
+  .scene[data-scene="S05"] .committee-layout{
+    padding:17px 15px;
+    border-radius:15px;
+  }
+  .scene[data-scene="S05"] .committee-layout > p{
+    font-size:16px;
+    line-height:1.5;
+  }
+  .scene[data-scene="S05"] .committee-choice-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:10px;
+    margin-top:18px;
+    padding-top:15px;
+  }
+  .scene[data-scene="S05"] .committee-choice-layout h2{
+    font-size:22px;
+    margin:0 0 4px;
+  }
+  .scene[data-scene="S05"] .committee-options .btn{
+    min-height:56px;
+    padding:14px 13px;
+    font-size:15px;
+    text-align:center;
+  }
+  .scene[data-scene="S05"] .committee-selected{
+    gap:12px;
+    padding:14px 13px;
+  }
+  .scene[data-scene="S05"] .committee-selected strong{font-size:17px}
+  .scene[data-scene="S05"] .committee-feedback{font-size:16px}
+  .scene[data-scene="S05"] .committee-actions{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:11px;
+  }
+  .scene[data-scene="S05"] .committee-actions .btn{
+    width:100%;
+    min-height:54px;
+    font-size:15px;
+  }
+}
