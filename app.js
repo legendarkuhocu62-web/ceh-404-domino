@@ -247,27 +247,37 @@
   }
   function renderS05() {
     const s=script.S05, result=logic.reviewPortfolio(game);
+    const responses={
+      conditions:"Комитет получает честное описание допущений и перечня данных, которые предстоит проверить.",
+      confidence:"Марина возражает: обещать гарантированный эффект без подтверждения условий нельзя.",
+      stage:"Комитет обсуждает поэтапное внедрение с контрольными наблюдениями."
+    };
     let html=note("Сцены S05–S08 — авторский проектный вариант для демонстрации. События и последствия ещё не утверждены командой.","warning");
-    html+=p(s.intro)+'<div class="summary-box"><h3>Предложение для комитета</h3>'+
+    html+='<div class="committee-layout">'+p(s.intro)+
+      '<div class="summary-box"><h3>Предложение для комитета</h3>'+
       row("Выбрано",result.selected.join(", "))+row("Расходы",result.budget.spent+" / "+data.budget+" млн")+
       row("Цель",result.goal)+'</div>';
     logic.committeeComments(game).forEach(({speaker,text})=>{
       const c=Object.keys(script.characters).find(k=>script.characters[k].name===speaker);
       html+=speech(c,text);
     });
-    html+='<h2>'+esc(s.question)+'</h2><div class="choice-list">'+s.options.map(x=>
-      button((game.committeeDecision===x.id?"✓ ":"")+x.label,"committee",x.id,
-        "option"+(game.committeeDecision===x.id?" selected":""))).join('')+'</div>';
-    if(game.committeeDecision) {
-      const responses={
-        conditions:"Комитет получает честное описание допущений и перечня данных, которые предстоит проверить.",
-        confidence:"Марина возражает: обещать гарантированный эффект без подтверждения условий нельзя.",
-        stage:"Комитет обсуждает поэтапное внедрение с контрольными наблюдениями."
-      };
-      html+=note(esc(responses[game.committeeDecision]),"feedback");
-      html+='<div class="actions">'+button("Перейти к производственной ситуации","next","S06","primary")+'</div>';
+    if(!game.committeeDecision) {
+      html+='<div class="committee-choice-layout"><h2>'+esc(s.question)+'</h2>'+
+        '<div class="choice-list committee-options">'+s.options.map(x=>
+          button(x.label,"committee",x.id,"option")).join('')+'</div></div>';
+    } else {
+      const selected=s.options.find(x=>x.id===game.committeeDecision);
+      html+='<div class="committee-result">'+
+        '<div class="committee-result-label">Ваш ответ комитету:</div>'+
+        '<div class="committee-selected"><span class="committee-selection-mark" aria-hidden="true"></span>'+
+        '<strong>'+esc(selected?selected.label:"")+'</strong></div>'+
+        '<p class="committee-feedback">'+esc(responses[game.committeeDecision]||"")+'</p>'+
+        '<div class="actions committee-actions">'+
+        button("Изменить ответ","changeCommitteeAnswer",undefined,"muted")+
+        button("Перейти к производственной ситуации","next","S06","primary")+
+        '</div></div>';
     }
-    return html;
+    return html+'</div>';
   }
   function renderS06() {
     const s=script.S06;
