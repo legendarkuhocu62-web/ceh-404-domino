@@ -3,65 +3,15 @@
   "status": "partial",
   "note": "В main добавлены утверждённые портреты Андрея и Марины; непроверенные фоны ещё требуют отдельной интеграции.",
   "assets": {
-    "bg_entrance": {
-      "type": "background",
-      "path": "assets/backgrounds/CH1-IMG-002_entrance.png",
-      "status": "approved"
-    },
-    "bg_technologist_office": {
-      "type": "background",
-      "path": "assets/backgrounds/CH1-IMG-005_technology_office.webp",
-      "status": "approved"
-    },
-    "bg_meeting_room": {
-      "type": "background",
-      "path": "assets/backgrounds/bg_meeting_room.webp",
-      "status": "proposed"
-    },
-    "bg_workshop": {
-      "type": "background",
-      "path": "assets/backgrounds/bg_workshop.webp",
-      "status": "proposed"
-    },
-    "irina_neutral": {
-      "type": "character",
-      "character": "irina",
-      "emotion": "neutral",
-      "path": "assets/characters/CH1-IMG-013_irina_neutral.png",
-      "status": "approved"
-    },
-    "andrey_neutral": {
-      "type": "character",
-      "character": "andrey",
-      "emotion": "neutral",
-      "path": "assets/characters/CH1-IMG-012_andrey_neutral.png",
-      "status": "approved"
-    },
-    "marina_neutral": {
-      "type": "character",
-      "character": "marina",
-      "emotion": "neutral",
-      "path": "assets/characters/CH1-IMG-011_marina_neutral.png",
-      "status": "approved"
-    },
-    "bg_main_screen": {
-      "type": "background",
-      "path": "assets/backgrounds/CH1-IMG-001_main_screen.webp",
-      "status": "approved"
-    },
-    "irina_friendly": {
-      "type": "character",
-      "character": "irina",
-      "emotion": "friendly",
-      "path": "assets/characters/CH1-IMG-015_irina_friendly.png",
-      "status": "approved"
-    },
-    "irina_focused": {
-      "type": "character",
-      "character": "irina",
-      "emotion": "focused",
-      "path": "assets/characters/CH1-IMG-016_irina_focused.png",
-      "status": "approved"
-    }
+    "bg_entrance": {"type": "background", "path": "assets/backgrounds/CH1-IMG-002_entrance.png", "status": "approved"},
+    "bg_technologist_office": {"type": "background", "path": "assets/backgrounds/CH1-IMG-005_technology_office.webp", "status": "approved"},
+    "bg_meeting_room": {"type": "background", "path": "assets/backgrounds/bg_meeting_room.webp", "status": "proposed"},
+    "bg_workshop": {"type": "background", "path": "assets/backgrounds/bg_workshop.webp", "status": "proposed"},
+    "irina_neutral": {"type": "character", "character": "irina", "emotion": "neutral", "path": "assets/characters/CH1-IMG-013_irina_neutral.png", "status": "approved"},
+    "andrey_neutral": {"type": "character", "character": "andrey", "emotion": "neutral", "path": "assets/characters/CH1-IMG-012_andrey_neutral.png", "status": "approved"},
+    "marina_neutral": {"type": "character", "character": "marina", "emotion": "neutral", "path": "assets/characters/CH1-IMG-011_marina_neutral.png", "status": "approved"},
+    "bg_main_screen": {"type": "background", "path": "assets/backgrounds/CH1-IMG-001_main_screen.png", "status": "approved"},
+    "irina_friendly": {"type": "character", "character": "irina", "emotion": "friendly", "path": "assets/characters/CH1-IMG-015_irina_friendly.png", "status": "approved"},
+    "irina_focused": {"type": "character", "character": "irina", "emotion": "focused", "path": "assets/characters/CH1-IMG-016_irina_focused.png", "status": "approved"}
   }
 }
