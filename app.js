@@ -417,6 +417,11 @@
     if(action==="goBack"&&game.scene==="S08"&&id==="S04") {
       game.scene="S04";game.reviewAccepted=false;view.reviewShown=false;render();return;
     }
+    if(action==="changeCommitteeAnswer"&&game.scene==="S05") {
+      game.committeeDecision=null;
+      render();
+      return;
+    }
     if(action==="evaluate"&&game.scene==="S04") {view.reviewShown=true;render();return;}
     if(action==="submitPortfolio"&&game.scene==="S04") {
       if(!logic.eligible(game)) {view.reviewShown=true;render();return;}
