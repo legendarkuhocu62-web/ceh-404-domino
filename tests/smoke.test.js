@@ -88,8 +88,11 @@ test("Диалог S03 показывает полную реплику, а не
 test("Тестовый CSS сохраняет длинный текст диалога на мобильных экранах",()=>{
   const css=source("style.css");
   assert.match(css,/\.conversation\{overflow:visible\}/);
-  assert.match(css,/\.dialogue-line\.response\{padding-left:0\}/);
-  assert.match(css,/overflow-wrap:anywhere/);
+  assert.match(css,/\.conversation \.dialogue-line\.response\{padding-left:0\}/);
+  assert.match(css,/overflow-wrap:break-word/);
+  assert.match(css,/word-break:normal/);
+  assert.match(css,/\.speech-text\{flex:1 1 0\}/);
+  assert.match(css,/\.speech-text p\{max-width:none\}/);
 });
 click("next","S04");
 test("Тринадцать инвестиционных карточек",()=>assert.equal((app.innerHTML.match(/class="investment /g)||[]).length,13));
