@@ -213,18 +213,25 @@ li{padding-bottom:8px}
   .speaker .character-art { width: 132px; height: 166px; max-width: 46%; }
 }
 
-/* TEST ONLY — мобильный диалог: длинные реплики должны быть видны целиком.
-   Не меняем сценарий, размеры изображений и переходы. */
+/* TEST ONLY — плотнее используем существующее пространство диалога.
+   Размер окна, изображения, шрифты и игровая логика не меняются. */
 .speech-text,.dialogue-line,.conversation{
   min-width:0;
+  max-width:100%;
   height:auto;
   max-height:none;
   white-space:normal;
-  overflow-wrap:anywhere;
+  overflow-wrap:break-word;
+  word-break:normal;
+  hyphens:auto;
 }
+.speech-text{flex:1 1 0}
+.speech-text p{max-width:none}
 .conversation{overflow:visible}
-@media (max-width:660px){
+.conversation .dialogue-line{padding-block:8px}
+.conversation .dialogue-line.response{padding-left:12px}
+@media(max-width:660px){
   .speech-text,.dialogue-line,.conversation{font-size:clamp(15px,4vw,18px);line-height:1.5}
-  .dialogue-line{padding-block:12px}
-  .dialogue-line.response{padding-left:0}
+  .conversation .dialogue-line{padding-block:8px}
+  .conversation .dialogue-line.response{padding-left:0}
 }
